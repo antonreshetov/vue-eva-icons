@@ -24,14 +24,14 @@ You can download latest version from the Github: [Download](https://github.com/a
 
 ### Global
 
-To use in your project, just import vue-eva-icon and install into Vue.
+To use in your project, just import vue-eva-icons and install into Vue.
 
 ```js
 import Vue from 'vue'
 import App from './App.vue'
-import EvaIcon from 'vue-eva-icon'
+import EvaIcons from 'vue-eva-icons'
 
-Vue.use(EvaIcon)
+Vue.use(EvaIcons)
 
 new Vue({
   render: h => h(App)
@@ -46,11 +46,11 @@ new Vue({
 </template>
 
 <script>
-  import { EvaIcon } from 'vue-eva-icon'
+  import { EvaIcons } from 'vue-eva-icons'
 
   export default {
     components: {
-      [EvaIcon.name]: EvaIcon
+      [EvaIcons.name]: EvaIcons
     }
   }
 </script>
