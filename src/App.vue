@@ -54,18 +54,27 @@
         </app-button-group>
       </div>
     </div>
+    <div class="desc right">Click by icon to copy html tag of component</div>
     <div class="icons">
       <template v-if="fill === 'fill'">
-        <div class="icons__item" v-for="i in filled" :key="i.name">
+        <div class="icons__item" v-for="i in filled" :key="i.name" @click="onCopy(i.name)">
+          <div class="tooltip">{{ i.name }}</div>
           <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
         </div>
       </template>
       <template v-if="fill === 'outline'">
         <div class="icons__item" v-for="i in outline" :key="i.name">
+          <div class="tooltip">{{ i.name }}</div>
           <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
         </div>
       </template>
     </div>
+    <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
+    <transition name="fade">
+      <div class="overlay" v-if="alert">
+        <h3>Tag copied</h3>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -88,7 +97,9 @@ export default {
       eva: eva.icons,
       search: '',
       fill: 'fill',
-      animation: 'zoom'
+      animation: 'zoom',
+      html: '<div></div>',
+      alert: false
     }
   },
 
@@ -105,6 +116,23 @@ export default {
     },
     outline () {
       return this.searchedIcons.filter(item => /outline/.test(item.name))
+    }
+  },
+
+  methods: {
+    onCopy (name) {
+      this.html = `<eva-icon name="${name}"></eva-icon>`
+      this.showAlert()
+      setTimeout(() => {
+        this.$refs.html.select()
+        document.execCommand('copy')
+      }, 10)
+    },
+    showAlert () {
+      this.alert = true
+      setTimeout(() => {
+        this.alert = false
+      }, 500)
     }
   }
 
@@ -194,6 +222,54 @@ $font-family: 'Roboto', sans-serif;
     border-radius: 3px;
     align-items: center;
     justify-content: center;
+    position: relative;
+    transition: all 0.2s;
+    cursor: pointer;
+    i {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &:hover {
+      // transform: scale(1.1, 1.1);
+    }
+    .tooltip {
+      position: absolute;
+      top: -35px;
+      // bottom: calc(100% + 30px);
+      display: none;
+      // left: 0;
+      // right: 0;
+      min-width: 120px;
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #fff;
+      word-break: keep-all;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 6px 0 6px;
+        border-color: #222 transparent transparent transparent;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &:hover {
+      .tooltip {
+        display: block;
+      }
+    }
   }
 }
 .icons-toolbar {
@@ -239,5 +315,36 @@ $font-family: 'Roboto', sans-serif;
     fill: #aaa;
     margin-right: 5px;
   }
+}
+.desc {
+  color: $color-grey-2;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.right {
+  text-align: right;
+}
+.overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  h3 {
+    font-size: 24px;
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s;
+  // transform: scale(1.3, 1.3);
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  transform: scale(1.5, 1.5);
 }
 </style>
