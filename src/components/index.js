@@ -1,4 +1,4 @@
-import EvaIcon from '../components/EvaIcon'
+import EvaIcon from './EvaIcon.vue'
 
 export default {
   install (Vue, options) {
