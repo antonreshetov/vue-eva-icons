@@ -67,14 +67,14 @@
           <div class="tooltip">{{ i.name }}</div>
           <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
         </div>
-        <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
-        <transition name="fade">
-          <div class="overlay" v-if="alert">
-            <h3>Tag copied</h3>
-          </div>
-        </transition>
       </template>
     </div>
+    <transition name="fade">
+      <div class="overlay" v-if="alert">
+        <h3>Tag copied</h3>
+      </div>
+    </transition>
+    <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
   </div>
 </template>
 
