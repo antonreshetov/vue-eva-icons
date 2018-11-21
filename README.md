@@ -24,7 +24,7 @@ You can download latest version from the Github: [Download](https://github.com/a
 
 ### Global
 
-To use in your project, just import vfc and install into Vue.
+To use in your project, just import vue-eva-icon and install into Vue.
 
 ```js
 import Vue from 'vue'
