@@ -63,18 +63,18 @@
         </div>
       </template>
       <template v-if="fill === 'outline'">
-        <div class="icons__item" v-for="i in outline" :key="i.name">
+        <div class="icons__item" v-for="i in outline" :key="i.name" @click="onCopy(i.name)">
           <div class="tooltip">{{ i.name }}</div>
           <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
         </div>
+        <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
+        <transition name="fade">
+          <div class="overlay" v-if="alert">
+            <h3>Tag copied</h3>
+          </div>
+        </transition>
       </template>
     </div>
-    <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
-    <transition name="fade">
-      <div class="overlay" v-if="alert">
-        <h3>Tag copied</h3>
-      </div>
-    </transition>
   </div>
 </template>
 
