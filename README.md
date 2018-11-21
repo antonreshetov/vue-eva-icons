@@ -1,6 +1,10 @@
 # Vue Eva Icons
 
-Simply beautiful open source icons as Vue components
+Simply beautiful open source [eva icons](https://akveo.github.io/eva-icons) as Vue components
+
+## Demo
+
+[https://antonreshetov.github.io/vue-eva-icons](https://antonreshetov.github.io/vue-eva-icons/)
 
 ## Install
 
