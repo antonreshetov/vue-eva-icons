@@ -8,7 +8,13 @@
       </a>
     </div>
     <h1>Vue Eva Icons</h1>
-    <p>Simply beautiful open source icons as Vue components</p>
+    <p>
+      Simply beautiful open source
+      <a
+        href="https://akveo.github.io/eva-icons/#/"
+        target="_blank"
+      >eva icons</a>&nbsp;as Vue components
+    </p>
     <div class="demo">
       <div
         class="tag"
