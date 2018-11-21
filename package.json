@@ -1,7 +1,7 @@
 {
   "name": "vue-eva-icons",
   "description": "Simply beautiful open source icons as Vue components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "repository": {
     "type": "git",
