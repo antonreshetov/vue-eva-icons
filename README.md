@@ -42,7 +42,7 @@ new Vue({
 </template>
 
 <script>
-  import { EvaIcon } from 'vfc'
+  import { EvaIcon } from 'vue-eva-icon'
 
   export default {
     components: {
