@@ -108,7 +108,7 @@ export default {
       return Object.keys(this.eva).map(key => this.eva[key])
     },
     searchedIcons () {
-      const re = new RegExp(this.search)
+      const re = new RegExp(this.search.toLowerCase())
       return this.icons.filter(item => re.test(item.name))
     },
     filled () {
