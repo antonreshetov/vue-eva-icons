@@ -46,11 +46,11 @@ new Vue({
 </template>
 
 <script>
-  import { EvaIcons } from 'vue-eva-icons'
+  import { EvaIcon } from 'vue-eva-icons'
 
   export default {
     components: {
-      [EvaIcons.name]: EvaIcons
+      [EvaIcon.name]: EvaIcon
     }
   }
 </script>
