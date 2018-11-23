@@ -1,6 +1,8 @@
 # Vue Eva Icons
 
-Simply beautiful open source [eva icons](https://akveo.github.io/eva-icons) as Vue components
+<img width="400" src="./src/assets/banner.png" alt="logo of vue-awesome repository">
+
+Is a pack of more than 480 beautiful open source [eva icons](https://akveo.github.io/eva-icons) as Vue components
 
 ## Demo
 
