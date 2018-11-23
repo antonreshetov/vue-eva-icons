@@ -28,6 +28,8 @@ You can download latest version from the Github: [Download](https://github.com/a
 
 To use in your project, just import vue-eva-icons and install into Vue.
 
+main.js
+
 ```js
 import Vue from 'vue'
 import App from './App.vue'
@@ -38,6 +40,14 @@ Vue.use(EvaIcons)
 new Vue({
   render: h => h(App)
 }).$mount('#app')
+```
+
+App.vue
+
+```html
+<template>
+  <eva-icon name="github" animation="pulse" fill="limegreen"></eva-icon>
+</template>
 ```
 
 ### On demand
