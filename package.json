@@ -20,7 +20,7 @@
   "author": "Anton Reshetov",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-eva ./src/components/index.js",
+    "build": "npm run test:unit && vue-cli-service build --target lib --name vue-eva ./src/components/index.js",
     "build:docs": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
