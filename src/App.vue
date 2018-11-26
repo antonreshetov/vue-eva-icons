@@ -72,21 +72,23 @@
         </div>
       </template>
     </div>
+    <div class="no-result" v-if="isNoResult">Sorry, no result</div>
     <transition name="fade">
       <div class="overlay" v-if="alert">
         <h3>Tag copied</h3>
       </div>
     </transition>
     <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
-    <div class="projects-list">More by @antonreshetov:
-      <ul>
-        <li>
-          <a href="https://github.com/antonreshetov/vue-form-components">Vue Form Components</a>
-        </li>
-        <li>
-          <a href="https://github.com/antonreshetov/vue-glide">Vue Glide</a>
-        </li>
-      </ul>
+    <div class="vfc-project">
+      <div class="vfc-project__inner">
+        <div class="desc">Other cool project</div>
+        <img src="./assets/vfc-logo.svg" alt="">
+        <h4>Vue Form Components</h4>
+        <p>Clean & minimal vue form elements with validation</p>
+        <a href="https://antonreshetov.github.io/vue-form-components/" target="_blank">
+          <div class="cta">View project</div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -129,6 +131,9 @@ export default {
     },
     outline () {
       return this.searchedIcons.filter(item => /outline/.test(item.name))
+    },
+    isNoResult () {
+      return this.filled.length === 0 && this.outline.length === 0
     }
   },
 
@@ -360,6 +365,35 @@ $font-family: 'Roboto', sans-serif;
     font-size: 24px;
   }
 }
+
+.vfc-project {
+  text-align: center;
+  font-size: 14px;
+  img {
+    margin-top: 15px;
+  }
+  h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .cta {
+    display: inline-block;
+    line-height: 40px;
+    border: 1px solid #aaa;
+    padding: 0 20px;
+    border-radius: 3px;
+  }
+}
+
+.no-result {
+  text-align: center;
+  padding: 50px;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.2s;
