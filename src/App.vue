@@ -13,7 +13,11 @@
       <a
         href="https://akveo.github.io/eva-icons/#/"
         target="_blank"
-      >eva icons</a>&nbsp;as Vue components
+      >eva icons</a>&nbsp;as Vue components.
+    </p>
+    <p>
+      Documentation
+      <a href="https://github.com/antonreshetov/vue-eva-icons#vue-eva-icons">here</a>.
     </p>
     <div class="demo">
       <div
