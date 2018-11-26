@@ -85,7 +85,10 @@
         <img src="./assets/vfc-logo.svg" alt="">
         <h4>Vue Form Components</h4>
         <p>Clean & minimal vue form elements with validation</p>
-        <a href="https://antonreshetov.github.io/vue-form-components/" target="_blank">
+        <a
+          href="https://antonreshetov.github.io/vue-form-components/#/components/install"
+          target="_blank"
+        >
           <div class="cta">View project</div>
         </a>
       </div>
