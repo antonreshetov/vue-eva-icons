@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <div class="header">
+      <span>developer support, put a star to</span>
       <a href="https://github.com/antonreshetov/vue-eva-icons">
         <app-button>
           <eva-icon name="github"></eva-icon>GitHub
         </app-button>
       </a>
+      <span>repo :)</span>
     </div>
     <h1>Vue Eva Icons</h1>
     <p>
@@ -166,6 +168,15 @@ $font-family: 'Roboto', sans-serif;
   padding: 30px 0;
   a {
     color: inherit;
+  }
+  span {
+    color: $color-grey-2;
+    font-size: 12px;
+  }
+  .btn {
+    position: relative;
+    top: 7px;
+    margin: 0 5px;
   }
 }
 .demo {
