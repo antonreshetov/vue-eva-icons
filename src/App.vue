@@ -12,10 +12,7 @@
     <h1>Vue Eva Icons</h1>
     <p>
       Simply beautiful open source
-      <a
-        href="https://akveo.github.io/eva-icons/#/"
-        target="_blank"
-      >Eva icons</a>&nbsp;as Vue components.
+      Eva icons as Vue components.
     </p>
     <p>
       Documentation
@@ -81,7 +78,7 @@
       </div>
     </transition>
     <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
-    <div class="sd">More by @antonreshetov:
+    <div class="projects-list">More by @antonreshetov:
       <ul>
         <li>
           <a href="https://github.com/antonreshetov/vue-form-components">Vue Form Components</a>
