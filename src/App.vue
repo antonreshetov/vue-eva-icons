@@ -262,16 +262,10 @@ $font-family: 'Roboto', sans-serif;
       align-items: center;
       justify-content: center;
     }
-    &:hover {
-      // transform: scale(1.1, 1.1);
-    }
     .tooltip {
       position: absolute;
       top: -35px;
-      // bottom: calc(100% + 30px);
       display: none;
-      // left: 0;
-      // right: 0;
       min-width: 120px;
       background: #222;
       padding: 5px 10px;
@@ -400,9 +394,9 @@ $font-family: 'Roboto', sans-serif;
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.2s;
-  // transform: scale(1.3, 1.3);
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
   transform: scale(1.5, 1.5);
 }
