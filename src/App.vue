@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="header">
-      <span>developer support, put a star to</span>
-      <a href="https://github.com/antonreshetov/vue-eva-icons">
+      <span>support the developer, put a star to</span>
+      <a href="https://github.com/antonreshetov/vue-eva-icons" target="_blank">
         <app-button>
           <eva-icon name="github"></eva-icon>GitHub
         </app-button>
