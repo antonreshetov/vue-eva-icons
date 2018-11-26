@@ -15,7 +15,7 @@
       <a
         href="https://akveo.github.io/eva-icons/#/"
         target="_blank"
-      >eva icons</a>&nbsp;as Vue components.
+      >Eva icons</a>&nbsp;as Vue components.
     </p>
     <p>
       Documentation
@@ -81,6 +81,16 @@
       </div>
     </transition>
     <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
+    <div class="sd">More by @antonreshetov:
+      <ul>
+        <li>
+          <a href="https://github.com/antonreshetov/vue-form-components">Vue Form Components</a>
+        </li>
+        <li>
+          <a href="https://github.com/antonreshetov/vue-glide">Vue Glide</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
