@@ -9,7 +9,7 @@
       </a>
       <span>repo :)</span>
     </div>
-    <h1>Vue Eva Icons</h1>
+    <h1>Vue Eva Icons <span class="version">{{ version }}</span></h1>
     <p>
       Simply beautiful open source
       Eva icons as Vue components.
@@ -97,10 +97,10 @@
 </template>
 
 <script>
-
 import * as eva from 'eva-icons/eva'
 import AppButton from './components/ui/Button'
 import AppButtonGroup from './components/ui/ButtonGroup'
+const version = require('../package.json').version
 
 export default {
   name: 'app',
@@ -117,7 +117,8 @@ export default {
       fill: 'fill',
       animation: 'zoom',
       html: '<div></div>',
-      alert: false
+      alert: false,
+      version
     }
   },
 
@@ -389,6 +390,17 @@ $font-family: 'Roboto', sans-serif;
 .no-result {
   text-align: center;
   padding: 50px;
+}
+
+.version {
+  font-size: 12px;
+  background-color: limegreen;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #fff;
+  position: relative;
+  font-weight: 400;
+  bottom: 4px;
 }
 
 .fade-enter-active,
