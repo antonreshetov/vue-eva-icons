@@ -8,6 +8,7 @@
         </app-button>
       </a>
       <span>repo :)</span>
+      <div id="carbonads"></div>
     </div>
     <h1>Vue Eva Icons <span class="version">{{ version }}</span></h1>
     <p>
@@ -411,5 +412,48 @@ $font-family: 'Roboto', sans-serif;
 .fade-leave-to {
   opacity: 0;
   transform: scale(1.5, 1.5);
+}
+
+#carbonads {
+  display: block;
+  overflow: hidden;
+  padding: 1em;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  float: left;
+  margin-right: 1em;
+}
+
+.carbon-img img {
+  display: block;
+  line-height: 1;
+}
+
+.carbon-text {
+  display: block;
+  float: left;
+  max-width: calc(100% - 130px - 1em);
+  text-align: left;
+}
+
+.carbon-poweredby {
+  position: absolute;
+  right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
+  bottom: 0;
+  display: block;
+  font-size: .8em;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 1px;
 }
 </style>
