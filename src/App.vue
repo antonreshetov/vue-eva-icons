@@ -8,7 +8,7 @@
         </app-button>
       </a>
       <span>repo :)</span>
-      <div id="carbonads"></div>
+      <div class="carbonads"></div>
     </div>
     <h1>Vue Eva Icons <span class="version">{{ version }}</span></h1>
     <p>
@@ -123,6 +123,10 @@ export default {
     }
   },
 
+  mounted () {
+    this.addCarbon()
+  },
+
   computed: {
     icons () {
       return Object.keys(this.eva).map(key => this.eva[key])
@@ -156,6 +160,12 @@ export default {
       setTimeout(() => {
         this.alert = false
       }, 500)
+    },
+    addCarbon () {
+      const carbon = document.createElement('script')
+      carbon.setAttribute('src', '//cdn.carbonads.com/carbon.js?serve=CK7DEK7I&placement=antonreshetovgithubio"')
+      carbon.setAttribute('id', '_carbonads_js')
+      document.querySelector('.carbonads').appendChild(carbon)
     }
   }
 
@@ -414,19 +424,31 @@ $font-family: 'Roboto', sans-serif;
   transform: scale(1.5, 1.5);
 }
 
+.carbonads {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
 #carbonads {
   display: block;
   overflow: hidden;
-  padding: 1em;
-  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
   margin-top: 15px;
+  position: absolute;
 }
 
 #carbonads span {
   position: relative;
   display: block;
   overflow: hidden;
+
+}
+
+.carbon-wrap {
+  max-width: 300px;
 }
 
 .carbon-img {
@@ -444,6 +466,8 @@ $font-family: 'Roboto', sans-serif;
   float: left;
   max-width: calc(100% - 130px - 1em);
   text-align: left;
+
+  text-decoration: none;
 }
 
 .carbon-poweredby {
