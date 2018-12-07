@@ -10,7 +10,10 @@
       <span>repo :)</span>
       <div class="carbonads"></div>
     </div>
-    <h1>Vue Eva Icons <span class="version">{{ version }}</span></h1>
+    <h1>
+      Vue Eva Icons
+      <span class="version">{{ version }}</span>
+    </h1>
     <p>
       Simply beautiful open source
       Eva icons as Vue components.
@@ -124,7 +127,9 @@ export default {
   },
 
   mounted () {
-    this.addCarbon()
+    if (process.env.NODE_ENV === 'production') {
+      this.addCarbon()
+    }
   },
 
   computed: {
@@ -444,7 +449,6 @@ $font-family: 'Roboto', sans-serif;
   position: relative;
   display: block;
   overflow: hidden;
-
 }
 
 .carbon-wrap {
@@ -475,7 +479,7 @@ $font-family: 'Roboto', sans-serif;
   right: 0; // You can also set the position to the "left" with the value of calc(130px + carbon-text’s font size). If the font-size is 12px, you’ll want to set the left value as 142px. It’ll align the .carbon-text with .carbon-poweredby
   bottom: 0;
   display: block;
-  font-size: .8em;
+  font-size: 0.8em;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 1px;
