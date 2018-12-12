@@ -9,6 +9,7 @@
       v-html="icon"
       class="eva eva-animation"
       :class="`eva-icon-hover-${animation}`"
+      @click="$emit('click')"
     ></svg>
   </i>
 </template>
