@@ -50,4 +50,10 @@ describe('EvaIcon', () => {
     const animationClass = `eva-icon-hover-${wrapper.props().animation}`
     expect(svg.attributes().class).toContain(animationClass)
   })
+  it('click event is emitted', () => {
+    const wrapper = shallowMount(EvaIcon)
+    const svg = wrapper.find('svg')
+    svg.trigger('click')
+    expect(wrapper.emitted().click).toBeTruthy()
+  })
 })
