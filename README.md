@@ -67,3 +67,19 @@ App.vue
   }
 </script>
 ```
+
+## Props
+
+| Name        | Description        | Type     | Accepted values          |
+| ----------- | ------------------ | -------- | ------------------------ |
+| `name`      | Icon name          | `string` | -                        |
+| `width`     | Width of icon      | `string` | -                        |
+| `height`    | Height of icon     | `string` | -                        |
+| `fill`      | Fill color of icon | `string` | HEX or color name        |
+| `animation` | Type of animation  | `string` | zoom, pulse, shake, flip |
+
+## Events
+
+| Name    | Description                     | Payload |
+| ------- | ------------------------------- | ------- |
+| `click` | Triggered when icon was clicked | -       |
