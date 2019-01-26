@@ -1,6 +1,6 @@
 <template>
   <div class="btn-group">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
@@ -8,13 +8,16 @@
 export default {
   name: 'AppButtonGroup',
 
-  props: {
-    active: String
-  },
-
   model: {
     prop: 'active',
     event: 'change'
+  },
+
+  props: {
+    active: {
+      type: String,
+      default: undefined
+    }
   },
 
   data () {

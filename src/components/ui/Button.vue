@@ -1,6 +1,10 @@
 <template>
-  <div class="btn" :class="{'btn--active': isActive}" @click="onClick">
-    <slot></slot>
+  <div
+    class="btn"
+    :class="{'btn--active': isActive}"
+    @click="onClick"
+  >
+    <slot />
   </div>
 </template>
 
@@ -9,7 +13,10 @@ export default {
   name: 'AppButton',
 
   props: {
-    name: String
+    name: {
+      type: String,
+      default: undefined
+    }
   },
 
   computed: {

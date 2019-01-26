@@ -2,13 +2,16 @@
   <div id="app">
     <div class="header">
       <span>support the developer, put a star to</span>
-      <a href="https://github.com/antonreshetov/vue-eva-icons" target="_blank">
+      <a
+        href="https://github.com/antonreshetov/vue-eva-icons"
+        target="_blank"
+      >
         <app-button>
-          <eva-icon name="github"></eva-icon>GitHub
+          <eva-icon name="github" />GitHub
         </app-button>
       </a>
       <span>repo :)</span>
-      <div class="carbonads"></div>
+      <div class="carbonads" />
     </div>
     <h1>
       Vue Eva Icons
@@ -26,20 +29,29 @@
       <div
         class="tag"
       >&lt;eva-icon name=&quot;github&quot; animation=&quot;pulse&quot; fill=&quot;limegreen&quot;&gt;&lt;/eva-icon&gt;</div>
-      <eva-icon name="github" animation="pulse" fill="limegreen"></eva-icon>
+      <eva-icon
+        name="github"
+        animation="pulse"
+        fill="limegreen"
+      />
     </div>
     <div class="search-input">
-      <input class="search-input__inner" type="text" v-model="search" placeholder="Type to search">
-      <eva-icon name="search"></eva-icon>
+      <input
+        v-model="search"
+        class="search-input__inner"
+        type="text"
+        placeholder="Type to search"
+      >
+      <eva-icon name="search" />
     </div>
     <div class="icons-toolbar">
       <div class="icons-toolbar__col">
         <app-button-group v-model="fill">
           <app-button name="fill">
-            <eva-icon name="star"></eva-icon>Fill
+            <eva-icon name="star" />Fill
           </app-button>
           <app-button name="outline">
-            <eva-icon name="star-outline"></eva-icon>Outline
+            <eva-icon name="star-outline" />Outline
           </app-button>
         </app-button-group>
       </div>
@@ -47,16 +59,16 @@
         <span class="label">Animation:</span>
         <app-button-group v-model="animation">
           <app-button name="zoom">
-            <eva-icon name="maximize-outline"></eva-icon>Zoom
+            <eva-icon name="maximize-outline" />Zoom
           </app-button>
           <app-button name="pulse">
-            <eva-icon name="activity"></eva-icon>Pulse
+            <eva-icon name="activity" />Pulse
           </app-button>
           <app-button name="shake">
-            <eva-icon name="radio"></eva-icon>Shake
+            <eva-icon name="radio" />Shake
           </app-button>
           <app-button name="flip">
-            <eva-icon name="flip-2"></eva-icon>Flip
+            <eva-icon name="flip-2" />Flip
           </app-button>
         </app-button-group>
       </div>
@@ -64,29 +76,61 @@
     <div class="desc right">Click by icon to copy html tag of component</div>
     <div class="icons">
       <template v-if="fill === 'fill'">
-        <div class="icons__item" v-for="i in filled" :key="i.name" @click="onCopy(i.name)">
+        <div
+          v-for="i in filled"
+          :key="i.name"
+          class="icons__item"
+          @click="onCopy(i.name)"
+        >
           <div class="tooltip">{{ i.name }}</div>
-          <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
+          <eva-icon
+            :name="i.name"
+            :animation="animation"
+            fill="#409eff"
+          />
         </div>
       </template>
       <template v-if="fill === 'outline'">
-        <div class="icons__item" v-for="i in outline" :key="i.name" @click="onCopy(i.name)">
+        <div
+          v-for="i in outline"
+          :key="i.name"
+          class="icons__item"
+          @click="onCopy(i.name)"
+        >
           <div class="tooltip">{{ i.name }}</div>
-          <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
+          <eva-icon
+            :name="i.name"
+            :animation="animation"
+            fill="#409eff"
+          />
         </div>
       </template>
     </div>
-    <div class="no-result" v-if="isNoResult">Sorry, no result</div>
+    <div
+      v-if="isNoResult"
+      class="no-result"
+    >Sorry, no result</div>
     <transition name="fade">
-      <div class="overlay" v-if="alert">
+      <div
+        v-if="alert"
+        class="overlay"
+      >
         <h3>Tag copied</h3>
       </div>
     </transition>
-    <textarea v-html="html" ref="html" style="opacity: 0"></textarea>
+    <!-- eslint-disable vue/no-v-html -->
+    <textarea
+      ref="html"
+      style="opacity: 0"
+      v-html="html"
+    />
     <div class="vfc-project">
       <div class="vfc-project__inner">
         <div class="desc">Other cool project</div>
-        <img src="./assets/vfc-logo.svg" alt="">
+        <img
+          src="./assets/vfc-logo.svg"
+          alt=""
+        >
         <h4>Vue Form Components</h4>
         <p>Clean & minimal vue form elements with validation</p>
         <a
@@ -107,7 +151,7 @@ import AppButtonGroup from './components/ui/ButtonGroup'
 const version = require('../package.json').version
 
 export default {
-  name: 'app',
+  name: 'App',
 
   components: {
     AppButton,
@@ -123,12 +167,6 @@ export default {
       html: '<div></div>',
       alert: false,
       version
-    }
-  },
-
-  mounted () {
-    if (process.env.NODE_ENV === 'production') {
-      this.addCarbon()
     }
   },
 
@@ -148,6 +186,12 @@ export default {
     },
     isNoResult () {
       return this.filled.length === 0 && this.outline.length === 0
+    }
+  },
+
+  mounted () {
+    if (process.env.NODE_ENV === 'production') {
+      this.addCarbon()
     }
   },
 

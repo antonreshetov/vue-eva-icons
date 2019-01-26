@@ -1,16 +1,17 @@
 <template>
   <i class="eva-hover">
+    <!-- eslint-disable vue/no-v-html -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       :width="width"
       :height="height"
       viewBox="0 0 24 24"
       :fill="fill"
-      v-html="icon"
       class="eva eva-animation"
       :class="`eva-icon-hover-${animation}`"
       @click="$emit('click')"
-    ></svg>
+      v-html="icon"
+    />
   </i>
 </template>
 
@@ -21,7 +22,10 @@ export default {
   name: 'EvaIcon',
 
   props: {
-    name: String,
+    name: {
+      type: String,
+      default: undefined
+    },
     width: {
       type: [String, Number],
       default: 24
@@ -30,7 +34,10 @@ export default {
       type: [String, Number],
       default: 24
     },
-    animation: String,
+    animation: {
+      type: String,
+      default: undefined
+    },
     fill: {
       type: String,
       default: 'inherit'
