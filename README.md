@@ -46,7 +46,7 @@ App.vue
 
 ```html
 <template>
-  <eva-icon name="github" animation="pulse" fill="limegreen"></eva-icon>
+  <eva-icon name="github" animation="pulse" fill="limegreen" hover="#409eff"></eva-icon>
 </template>
 ```
 
@@ -54,7 +54,7 @@ App.vue
 
 ```html
 <template>
-  <eva-icon name="github" animation="pulse" fill="limegreen"></eva-icon>
+  <eva-icon name="github" animation="pulse" fill="limegreen" hover="#409eff"></eva-icon>
 </template>
 
 <script>
@@ -76,6 +76,7 @@ App.vue
 | `width`     | Width of icon      | `string` | -                        |
 | `height`    | Height of icon     | `string` | -                        |
 | `fill`      | Fill color of icon | `string` | HEX or color name        |
+| `hover`     | Hover color of icon| `string` | HEX or color name        |
 | `animation` | Type of animation  | `string` | zoom, pulse, shake, flip |
 
 ## Events

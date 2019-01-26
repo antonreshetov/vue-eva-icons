@@ -25,8 +25,8 @@
     <div class="demo">
       <div
         class="tag"
-      >&lt;eva-icon name=&quot;github&quot; animation=&quot;pulse&quot; fill=&quot;limegreen&quot;&gt;&lt;/eva-icon&gt;</div>
-      <eva-icon name="github" animation="pulse" fill="limegreen"></eva-icon>
+      >&lt;eva-icon name=&quot;github&quot; animation=&quot;pulse&quot; fill=&quot;limegreen&quot; hover=&quot;#409eff&quot;&gt;&lt;/eva-icon&gt;</div>
+      <eva-icon name="github" animation="pulse" fill="limegreen" hover="#409eff"></eva-icon>
     </div>
     <div class="search-input">
       <input class="search-input__inner" type="text" v-model="search" placeholder="Type to search">
@@ -66,13 +66,13 @@
       <template v-if="fill === 'fill'">
         <div class="icons__item" v-for="i in filled" :key="i.name" @click="onCopy(i.name)">
           <div class="tooltip">{{ i.name }}</div>
-          <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
+          <eva-icon :name="i.name" :animation="animation" fill="#409eff" hover="limegreen"></eva-icon>
         </div>
       </template>
       <template v-if="fill === 'outline'">
         <div class="icons__item" v-for="i in outline" :key="i.name" @click="onCopy(i.name)">
           <div class="tooltip">{{ i.name }}</div>
-          <eva-icon :name="i.name" :animation="animation" fill="#409eff"></eva-icon>
+          <eva-icon :name="i.name" :animation="animation" fill="#409eff" hover="limegreen"></eva-icon>
         </div>
       </template>
     </div>

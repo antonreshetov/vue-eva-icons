@@ -1,11 +1,11 @@
 <template>
-  <i class="eva-hover">
+  <i class="eva-hover" @mouseenter="currentColor = hover ? hover : fill" @mouseleave="currentColor = fill">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       :width="width"
       :height="height"
       viewBox="0 0 24 24"
-      :fill="fill"
+      :fill="currentColor"
       v-html="icon"
       class="eva eva-animation"
       :class="`eva-icon-hover-${animation}`"
@@ -34,6 +34,15 @@ export default {
     fill: {
       type: String,
       default: 'inherit'
+    },
+    hover: {
+      type: String
+    }
+  },
+
+  data () {
+    return {
+      currentColor: this.fill
     }
   },
 
