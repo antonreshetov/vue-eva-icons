@@ -126,15 +126,11 @@
     />
     <div class="vfc-project">
       <div class="vfc-project__inner">
-        <div class="desc">Other cool project</div>
-        <img
-          src="./assets/vfc-logo.svg"
-          alt=""
-        >
-        <h4>Vue Form Components</h4>
-        <p>Clean & minimal vue form elements with validation</p>
+        <div class="desc">Other cool icons</div>
+        <h4>Vue Unicons</h4>
+        <p>1000+ Pixel-perfect svg icons for your next project</p>
         <a
-          href="https://antonreshetov.github.io/vue-form-components/#/components/install"
+          href="https://antonreshetov.github.io/vue-unicons/"
           target="_blank"
         >
           <div class="cta">View project</div>
